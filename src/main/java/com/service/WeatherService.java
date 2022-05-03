@@ -18,11 +18,12 @@ public class WeatherService {
     private Response response;
     private String cityName;
     private String unit;
+    //user specific APIkey
     private String APIkey = "ee41acb4f0a85a57b407491da4c51083";
     
   //Getting Data from OpenWeather API
     public JSONObject getWeather(){
-        client = new OkHttpClient();  //using OKHTTP dependency . You have to add this manually form OKHTTP website
+        client = new OkHttpClient(); 
         Request request = new Request.Builder()
                 .url("http://api.openweathermap.org/data/2.5/weather?q="+getCityName()+"&units="+getUnit()+"&appid="+APIkey)
                 .build();
